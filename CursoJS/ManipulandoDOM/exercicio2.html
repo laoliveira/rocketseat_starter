@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Curso Javascript</title>
+	</head>
+	<body>
+		<div id="app">
+			<button name="redSquareBtn">More Squares!</button>
+		</div>
+
+		<script>
+			var squareDivElement = document.querySelector("#app");
+			var btnElement = document.querySelector(
+				"button[name=redSquareBtn]"
+			);
+
+            function getRandomColor() {
+				var letters = "0123456789ABCDEF";
+				var color = "#";
+				for (var i = 0; i < 6; i++) {
+					color += letters[Math.floor(Math.random() * 16)];
+				}
+				return color;
+			}
+            var newColor = getRandomColor(); // #E943F0
+
+			btnElement.onclick = function() {
+				var boxElement = document.createElement("div");
+				boxElement.style.width = 100;
+				boxElement.style.height = 100;
+				boxElement.style.margin = 5;
+                boxElement.style.backgroundColor = "#f00";
+                boxElement.onmouseover = function () {
+                    boxElement.style.backgroundColor = getRandomColor();
+                }
+				squareDivElement.appendChild(boxElement);
+			};
+
+			
+            
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<input type="text" name="nome" />
+		<button onClick="adicionar()">Adicionar</button>
+		<table id="nomes"></table>
+
+		<script>
+			var nomes = ["Diego", "Gabriel", "Lucas"];
+			var tableElement = document.querySelector("table#nomes");
+			var inputElement = document.querySelector("input[name=nome]");
+
+			function addNames(nomes) {
+				for (var nome of nomes) {
+					var ulElement = document.createElement("ul");
+					ulElement.textContent = nome;
+					tableElement.appendChild(ulElement);
+				}
+			}
+
+			addNames(nomes);
+
+			function adicionar() {
+				if (inputElement.value.trim() != "") {
+					var ulElement = document.createElement("ul");
+					ulElemenAt.textContent = inputElement.value.trim();
+					inputElement.value = "";
+					tableElement.appendChild(ulElement);
+				}
+			}
+		</script>
+	</body>
+</html>
