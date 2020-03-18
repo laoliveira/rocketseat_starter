@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<table id="nomes">
+			
+        </table>
+        
+        <script>
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+            var tableElement = document.querySelector('table#nomes');
+
+            function addNames(nomes){
+                for(var nome of nomes){
+                    var ulElement = document.createElement('ul');
+                    ulElement.textContent = nome;
+                    tableElement.appendChild(ulElement);
+                }
+            }
+
+            addNames(nomes);
+            
+            
+        </script>
+	</body>
+</html>
