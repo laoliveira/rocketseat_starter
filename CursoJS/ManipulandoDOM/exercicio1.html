@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Curso Javascript</title>
+	</head>
+	<body>
+		<div id="app">
+            <button name='redSquareBtn'>More Squares!</button>
+		</div>
+
+		<script>
+            var squareDivElement = document.querySelector('#app');
+            var btnElement = document.querySelector('button[name=redSquareBtn]');
+            
+            btnElement.onclick = function (){
+                var boxElement = document.createElement('div');
+                boxElement.style.width = 100;
+                boxElement.style.height = 100;
+                boxElement.style.margin = 5;
+                boxElement.style.backgroundColor = '#f00';
+                squareDivElement.appendChild(boxElement);
+            }
+
+            
+		</script>
+	</body>
+</html>
